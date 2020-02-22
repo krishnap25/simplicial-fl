@@ -1,0 +1,10 @@
+name: simplicial_fl
+channels:
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.6
+  - numpy
+  - scipy
+  - pillow
+  - pandas
