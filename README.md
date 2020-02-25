@@ -115,16 +115,16 @@ Below we give commands to download and preprocess the data as used in the paper.
   * **Overview:** Text Dataset of Shakespeare Dialogues
   * **Details:** 2288 total users, 545 users used for experiments
   * **Task:** Next-Character Prediction
-  * **Setup:** Download `data.tgz` from [this link](https://drive.google.com/file/d/1IPf_jg_Y2ZzFw4wKaHrU2FgWs_MfhPkG/view?usp=sharing), and untar it in ```data/shakespeare``` using the command `tar -zvxf data.tgz`. The data occupies 30M compressed and 160M uncompressed. 
-  
-  Note: We will update the repository and the paper with a command like the two datasets above to generate the data using a script.
-  
-<!-- Go to ```data/shakespeare``` and run the command (takes 10-15 min and ~500M of disk space)
+  * **Setup:** Go to ```data/shakespeare``` and run the command (takes 10-15 min and ~500M of disk space)
  
 ```
 ./preprocess.sh -s niid --sf 1.0 -k 100 -t user --tf 0.5
 ```
--->
+  
+  <!-- Download `data.tgz` from [this link](https://drive.google.com/file/d/1IPf_jg_Y2ZzFw4wKaHrU2FgWs_MfhPkG/view?usp=sharing), and untar it in ```data/shakespeare``` using the command `tar -zvxf data.tgz`. The data occupies 30M compressed and 160M uncompressed.
+  Note: We will update the repository and the paper with a command like the two datasets above to generate the data using a script.
+  -->
+  
 
 
 Reproducting Experiments in the Paper
