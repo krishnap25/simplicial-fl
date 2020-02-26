@@ -23,6 +23,11 @@ Please cite this paper if you find the repository useful.
 }
 ```
 
+In case of queries or questions, please open a pull request
+or contact [Yassine Laguel](https://yassine-laguel.github.io/)
+and [Krishna Pillutla](https://krishnap25.github.io/).
+-->
+
 
 Introduction
 -----------------
