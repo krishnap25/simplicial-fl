@@ -15,7 +15,7 @@ accompanying paper.
 
 Please cite this paper if you find the repository useful.
 ```
-@article{laugel-etal-2020:simplicial-fl ,
+@article{laguel-etal-2020:simplicial-fl ,
   title={{Device Heterogeneity in Federated Learning:A Superquantile Approach},
   author={Laguel, Yassine and Pillutla, Krishna and  Malick, J\'{e}r\^{o}me and Harchaoui, Zaid},
   journal={arXiv preprint},
@@ -203,7 +203,7 @@ Citation
 If you found this repository useful, please cite this paper.
 
 ```
-@article{laugel-etal-2020:simplicial-fl ,
+@article{laguel-etal-2020:simplicial-fl ,
   title={{Device Heterogeneity in Federated Learning:A Superquantile Approach},
   author={Laguel, Yassine and Pillutla, Krishna and  Malick, J\'{e}r\^{o}me and Harchaoui, Zaid},
   journal={arXiv preprint},
