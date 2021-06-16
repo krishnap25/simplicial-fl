@@ -203,11 +203,18 @@ Citation
 If you found this repository useful, please cite this paper.
 
 ```
-@article{laguel-etal-2020:simplicial-fl ,
-  title={{Device Heterogeneity in Federated Learning:A Superquantile Approach},
-  author={Laguel, Yassine and Pillutla, Krishna and  Malick, J\'{e}r\^{o}me and Harchaoui, Zaid},
-  journal={arXiv preprint},
-  year={2020}
+@inproceedings{DBLP:conf/ciss/LaguelPMH21,
+  author    = {Yassine Laguel and
+               Krishna Pillutla and
+               J{\'{e}}r{\^{o}}me Malick and
+               Za{\"{\i}}d Harchaoui},
+  title     = {A Superquantile Approach to Federated Learning with Heterogeneous
+               Devices},
+  booktitle = {55th Annual Conference on Information Sciences and Systems, {CISS}
+               2021, Baltimore, MD, USA, March 24-26, 2021},
+  pages     = {1--6},
+  publisher = {{IEEE}},
+  year      = {2021},
 }
 ```
 
