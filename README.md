@@ -19,7 +19,7 @@ Please cite this paper if you find the repository useful.
   author    = {Yassine Laguel and
                Krishna Pillutla and
                J{\'{e}}r{\^{o}}me Malick and
-               Za{\"{\i}}d Harchaoui},
+               Zaid Harchaoui},
   title     = {A Superquantile Approach to Federated Learning with Heterogeneous
                Devices},
   booktitle = {55th Annual Conference on Information Sciences and Systems, {CISS}
@@ -214,7 +214,7 @@ If you found this repository useful, please cite this paper.
   author    = {Yassine Laguel and
                Krishna Pillutla and
                J{\'{e}}r{\^{o}}me Malick and
-               Za{\"{\i}}d Harchaoui},
+               Zaid Harchaoui},
   title     = {A Superquantile Approach to Federated Learning with Heterogeneous
                Devices},
   booktitle = {55th Annual Conference on Information Sciences and Systems, {CISS}
