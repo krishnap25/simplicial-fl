@@ -1,27 +1,39 @@
 <!-- # Handling Device Heterogeneity in Federated Learning: A Superquantile Approach -->
 ## Simplicial-FL (![Simplicial-FL](fig/simplicial-fl.gif))
 
+See [here](https://github.com/krishnap25/sqwash) for a 
+**standalone pip package for superquantile learning in PyTorch**.
+
 This code provides an implementation of 
 the 
 ![Simplicial-FL](fig/simplicial-fl.gif)
-(pronoucned *Simplicial-FL*)
+(pronounced *Simplicial-FL*)
 framework to handle device heterogeneity in federated learning.
 This codebase is based on a fork of the [Leaf](leaf.cmu.edu) benchmark suite
-and provides scripts to reproduce the experimental results in the 
-accompanying paper. 
+and provides scripts to reproduce the experimental results in the papers published in
+[IEEE CISS 2021](https://krishnap25.github.io/papers/2021_Simplicial_FL_CISS.pdf) and 
+[Springer Machine Learning Journal](https://arxiv.org/pdf/2112.09429.pdf). 
 
 ![schematic](fig/simplicial_fl_schematic.png "Schematic of Simplicial FL")
 
 
-Please cite this paper if you find the repository useful.
+Please cite these papers if you find this repository useful.
 ```
+@article{sfl_mlj_2023,
+title = {Federated Learning with Superquantile Aggregation for Heterogeneous Data},
+author={Pillutla, Krishna and Laguel, Yassine and Malick, J{\'{e}}r{\^{o}}me and Harchaoui, Zaid},
+journal   = {Mach. Learn.},
+year = {2023},
+publisher={Springer}
+}
+
 @inproceedings{DBLP:conf/ciss/LaguelPMH21,
   author    = {Yassine Laguel and
                Krishna Pillutla and
                J{\'{e}}r{\^{o}}me Malick and
                Zaid Harchaoui},
-  title     = {A Superquantile Approach to Federated Learning with Heterogeneous
-               Devices},
+  title     = {{A Superquantile Approach to Federated Learning with Heterogeneous
+               Devices}},
   booktitle = {55th Annual Conference on Information Sciences and Systems, {CISS}
                2021, Baltimore, MD, USA, March 24-26, 2021},
   pages     = {1--6},
@@ -37,11 +49,11 @@ and [Krishna Pillutla](https://krishnap25.github.io/).
 
 Introduction
 -----------------
-Federated Learning is a paradigm to train centralized machine learning models 
+Federated Learning is a paradigm for training centralized machine learning models 
 on data distributed over a large number of devices such as mobile phones.
 
 This code compares the ![Simplicial-FL](fig/simplicial-fl.gif) approach proposed in the accompanying paper
-to the FedAvg algorithm ([McMahan et. al. 2017](https://arxiv.org/abs/1602.05629), referred to 
+to the FedAvg algorithm ([McMahan et al. 2017](https://arxiv.org/abs/1602.05629), referred to 
 here also as "Vanilla-FL").
 The code has been developed from a fork of [Leaf](leaf.cmu.edu), commit 
 ```51ab702af932090b3bd122af1a812ea4da6d8740```.
@@ -74,14 +86,14 @@ from the paper.
 However, for speed of execution, it is highly recommended to enable GPU support for the neural network 
 experiments on datasets EMNIST and Shakespeare.
 
-The primary dependencies are PyTorch, Numpy, Scipy, Pillow and Pandas.
+The primary dependencies are PyTorch, Numpy, Scipy, Pillow, and Pandas.
 The code has been tested on Ubuntu 16.04.
 
 High-Level Overview
 -------------------
 The code base implements Vanilla-FL (FedAvg) and the ![Simplicial-FL](fig/simplicial-fl.gif) frameworks. 
 The scripts here provide the data setup required for 
-three datasets --- EMNIST, Sent140, Shakespeare (descripted below, see the section on "Data Setup").
+three datasets --- EMNIST, Sent140, and Shakespeare (described below, see the section on "Data Setup").
 
 The file ```models/main.py``` takes the following key arguments:
 
@@ -90,9 +102,9 @@ The file ```models/main.py``` takes the following key arguments:
   * `--run_simplicial_fl`: if True, run ![Simplicial-FL](fig/simplicial-fl.gif), otherwise run Vanilla-FL (FedAvg)
   * `--nonconformity_level`: corresponds to (1-theta), where "theta" is the conformity level, as defined in the paper
   
-There are a number of other arguments including the number of rounds, how often to evaluate, the number of devices per round, the learning rate and other hyperparameters. See the scripts for full details.
+There are a number of other arguments including the number of rounds, how often to evaluate, the number of devices per round, the learning rate, and other hyperparameters. See the scripts for full details.
 
-For each dataset we have two models, a linear model (usually logistic regression, Shakespeare dataset does not have a linear model) and neural network model (ConvNet for EMNIST, LSTM for Sent140 and GRU for Shakespeare). 
+For each dataset, we have two models, a linear model (usually logistic regression, Shakespeare dataset does not have a linear model) and a neural network model (ConvNet for EMNIST, LSTM for Sent140, and GRU for Shakespeare). 
 
 
 Data Setup
@@ -112,7 +124,7 @@ Below we give commands to download and preprocess the data as used in the paper.
 
 2. Sent140
 
-  * **Overview:** Dataset of tweets of a given user and sentiment of tweet
+  * **Overview:** Dataset of tweets of a given user and sentiment of the tweet
   * **Details:** 877 users used for experiments
   * **Task:** Sentiment Analysis (Binary Classification)
   * **Setup:** Go to ```data/sent140``` and run the command (takes < 5 min and ~10M of disk space)
@@ -138,7 +150,7 @@ Below we give commands to download and preprocess the data as used in the paper.
   
 
 
-Reproducting Experiments in the Paper
+Reproducing Experiments in the Paper
 -------------------------------------
 
 Once the data has been set up, the scripts provided in the folder ```scripts/``` can be used 
@@ -147,7 +159,7 @@ Note that GPU computations are non-deterministic. Consequently, the neural netwo
 experiments reported in the paper on the datasets EMNIST and Shakespeare, 
 which were run using GPUs, are not perfectly reproducible. 
 
-First go to the folder `models` and create the output directories by using 
+First, go to the folder `models` and create the output directories by using 
 the following commands in the terminal
 ```
 cd simplicial-fl/models
@@ -164,7 +176,7 @@ done
 ```
 
 Before the Sent140 experiments can be run, we must first download the GloVe embeddings. 
-To this end, run (uses upto 2 GB in temporary space and takes < 5 minutes to execute)
+To this end, run (uses up to 2 GB in temporary space and takes < 5 minutes to execute)
 ```
 ./sent140/get_embs.sh
 ```
@@ -174,8 +186,8 @@ Now, each script can be launched, e.g., as
 ```
 ./scripts/exp/shakespeare/nn_simplicial_fl/run_0.2.sh
 ``` 
-This script launches on the Shakespeare data, the ![Simplicial-FL](fig/simplicial-fl.gif) algorithm
-using a neural network model in this case with a nonconformity level 0.2.
+This script launches on the Shakespeare data, the![Simplicial-FL](fig/simplicial-fl.gif) algorithm
+using a neural network model in this case with a nonconformity level of 0.2.
 
 Note that each script repeats the experiments for 5 different values of the 
 random seed.
@@ -207,9 +219,17 @@ The first item in each linea is the round number, while the the second item is a
 
 Citation
 ---------
-If you found this repository useful, please cite this paper.
+If you found this repository useful, please cite these papers.
 
 ```
+@article{sfl_mlj_2023,
+title = {Federated Learning with Superquantile Aggregation for Heterogeneous Data},
+author={Pillutla, Krishna and Laguel, Yassine and Malick, J{\'{e}}r{\^{o}}me and Harchaoui, Zaid},
+journal   = {Mach. Learn.},
+year = {2023},
+publisher={Springer}
+}
+
 @inproceedings{DBLP:conf/ciss/LaguelPMH21,
   author    = {Yassine Laguel and
                Krishna Pillutla and
